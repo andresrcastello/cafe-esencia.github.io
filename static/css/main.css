@@ -72,6 +72,7 @@ body {
     filter: hue-rotate(360deg);
     transition: filter 2s;
 }
+
 #MainNavigation {
     font: 600 18px/94px proxima-nova;
     letter-spacing: .12em;
@@ -292,6 +293,29 @@ h1#featured-in + ul img {
 }
 
 @media screen and (max-width: 499px) {
+    #Masthead h1 img {
+        width: 100%;
+        height: auto;
+    }
+    #MainNavigation::before {
+        content: "\2630";
+        position: absolute;
+        top: 5px;
+        left: 10px;
+        color: #000;
+        font-size: 36px;
+        line-height: 1em;
+        cursor: pointer;
+    }
+    #MainNavigation ul {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 1s;
+    }
+    #MainNavigation:hover ul {
+        max-height: 75vh;
+        transition: max-height 1s;
+    }
     #MainNavigation li {
         display: list-item;
         line-height: 1.5em;
