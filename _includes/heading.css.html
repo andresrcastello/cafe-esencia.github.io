@@ -10,5 +10,18 @@
     font: 300 90px/630px proxima-nova;
     letter-spacing: .03em;
 }
+@media screen and (max-width: 999px) {
+    #MainContent h1:nth-of-type({{ forloop.index }}) {
+        height: auto;
+        font-size: 5em;
+        line-height: 5em;
+    }
+}
+@media screen and (max-width: 500px) {
+    #MainContent h1:nth-of-type({{ forloop.index }}) {
+        font-size: 3em;
+        line-height: 4em;
+    }
+}
 {% endfor %}
 </style>

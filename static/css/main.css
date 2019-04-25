@@ -68,6 +68,10 @@ body {
 #Masthead h1 img {
     height: 94px;
 }
+#Masthead h1 img:hover {
+    filter: hue-rotate(360deg);
+    transition: filter 2s;
+}
 #MainNavigation {
     font: 600 18px/94px proxima-nova;
     letter-spacing: .12em;
@@ -152,6 +156,15 @@ main footer {
     grid-gap: 2px;
     line-height: 0;
 }
+#gallery > li {
+    position: relative;
+}
+#gallery li > a:first-child {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
 #gallery img {
     width: 322px;
     height: 215px;
@@ -159,6 +172,52 @@ main footer {
 }
 #gallery figcaption {
     display: none;
+}
+.gallery-lightbox:target {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, .9);
+    color: #fff;
+}
+.gallery-lightbox .btn-close {
+    display: none;
+}
+.gallery-lightbox:target .btn-close {
+    display: block;
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    font-size: 18px;
+    text-decoration: none;
+}
+#gallery .gallery-lightbox:target a {
+    color: inherit;
+}
+#gallery .gallery-lightbox:target img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-position: center !important;
+    object-fit: contain;
+}
+#gallery .gallery-lightbox:target:hover figcaption {
+    display: block;
+    position: absolute;
+    left: 40px;
+    bottom: 20px;
+    box-sizing: border-box;
+    width: calc(100% - 80px);
+    height: 6em;
+    padding: 2em;
+    background: rgba(0, 0, 0, .6);
+    line-height: 1em;
+    text-align: center;
 }
 
 #OpeningHours,
@@ -223,6 +282,8 @@ h1#featured-in + ul img {
     }
     #Masthead h1 {
         float: none;
+        text-align: center;
+        margin-right: 0;
     }
     #gallery {
         grid-template-columns: 1fr 1fr;
