@@ -1,0 +1,11 @@
+<section id="OpeningHours">
+    <h1>Hours</h1>
+    <ol class="dotleader">
+        {% for day in site.data.hours %}
+        <li>
+            <span>{{ day[0] | capitalize }}</span>
+            <span>{{ day[1] | downcase }}</span>
+        </li>
+        {% endfor %}
+    </ol>
+</section>

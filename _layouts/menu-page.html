@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+{% if page.image %}
+<img
+    class="menu-item-photo"
+    src="{{ page.image | prepend: "/static/images/" | relative_url }}"
+    alt="Picture of {{ page.title }}."
+/>
+{% endif %}
+
+{{ content }}

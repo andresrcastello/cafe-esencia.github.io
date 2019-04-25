@@ -1,0 +1,17 @@
+main:
+  - 
+    url: /
+    text: Welcome
+  -
+    url: /about/
+    text: About
+    title_text: Learn more about us!
+  -
+    url: /menu/
+    text: Menu
+  -
+    url: /join-the-team
+    text: Join the Team
+  -
+    url: /press/
+    text: Press

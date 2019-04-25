@@ -1,0 +1,42 @@
+---
+title: Menu
+---
+
+<div id="menu">
+
+{% assign menus = site.menu | group_by: "menu" %}
+{% for menu in menus %}
+<h1 id="{{ menu.name | slugify }}">{{ menu.name | capitalize }}</h1>
+<section id="menu-{{ menu.name | slugify }}" class="menu-section">
+
+{% assign categories = menu.items | group_by: "category" %}
+{% for category in categories %}
+<h2 id="{{ category.name | slugify }}">{{ category.name }}</h2>
+{% if site.data.menu_categories contains category.name %}
+<p>{{ site.data.menu_categories[category.name] }}</p>
+{% endif %}
+<ul class="dotleader">
+    {% for item in category.items %}
+    <li>
+        <span>{{ item.title }}</span>
+        <span>${{ item.price }}</span>
+        {% if item.content %}<ul>
+            <li><p>{{ item.content }}</p></li>
+        </ul>{% endif %}
+        {% if item.diets %}<ul class="diets">{% for diet in item.diets %}
+        <li>({{ diet }})</li>
+        {% endfor %}</ul>{% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endfor %}
+
+</section><!-- .menu-section -->
+{% endfor %}
+
+</div><!-- #menu -->
+
+<footer>
+    <p>Tax included in prices.</p>
+    <p>Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness.</p>
+</footer>

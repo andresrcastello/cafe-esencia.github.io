@@ -1,0 +1,10 @@
+<header id="Masthead">
+    <h1>
+        <a href="{{ "/" | relative_url }}">
+            <img src="{{ site.main_logo | prepend: "/static/images/" | relative_url }}" alt="{{ site.title }}" />
+        </a>
+    </h1>
+    <nav id="MainNavigation">
+        {% include site-navigation.html %}
+    </nav>
+</header>

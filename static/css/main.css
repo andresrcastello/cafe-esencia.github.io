@@ -1,0 +1,206 @@
+---
+layout: none
+---
+
+:root {
+    --main-color: #4e76c3;   /* Café Esencia Blue*/
+    --accent-color: #eddca8; /* Café Esencia Yellow */
+}
+
+@font-face {
+    font-family: proxima-nova;
+    src: url("../fonts/proxima-nova/proxima-nova.woff") format("woff2"), url("../fonts/proxima-nova/proxima-nova.otf") format("opentype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: proxima-nova;
+    src: url("../fonts/proxima-nova/proxima-nova-semibold.woff") format("woff2"), url("../fonts/proxima-nova/proxima-nova-semibold.otf") format("opentype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: proxima-nova;
+    src: url("../fonts/proxima-nova/proxima-nova-light.woff") format("woff2"), url("../fonts/proxima-nova/proxima-nova-light.otf") format("opentype");
+    font-style: normal;
+    font-weight: 300;
+}
+
+html,
+body,
+ul,
+ol,
+figure {
+    margin: 0;
+    border: none;
+    padding: 0;
+    list-style-type: none;
+}
+body {
+    background: #fff;
+    color: var(--main-color);
+    font: 300 18px/1.1em proxima-nova;
+    letter-spacing: 0em;
+}
+
+#Masthead,
+#MainContent {
+    margin: 0 auto;
+    max-width: 970px;
+}
+#Masthead {
+    padding: 14px 0;
+}
+#Masthead h1 {
+    float: left;
+    margin: 0 50px 0 0;
+}
+#Masthead h1 img {
+    height: 94px;
+}
+#MainNavigation {
+    font: 600 18px/94px proxima-nova;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+#MainNavigation li {
+    display: inline-block;
+}
+#MainNavigation a {
+    padding: 0 .5em;
+    color: var(--main-color);
+    text-decoration: none;
+}
+#MainNavigation li.current a {
+    color: var(--accent-color);
+}
+
+.dotleader {
+    overflow: hidden;
+}
+.dotleader li:before {
+    float: left;
+    width: 0;
+    white-space: nowrap;
+    content:
+        ". . . . . . . . . . . . . . . . . . . . . . . . . " 
+        ". . . . . . . . . . . . . . . . . . . . . . . . . " 
+        ". . . . . . . . . . . . . . . . . . . . . . . . . " 
+        ". . . . . . . . . . . . . . . . . . . . . . . . . " 
+        ". . . . . . . . . . . . . . . . . . . . . . . . . " 
+        ". . . . . . . . . . . . . . . . . . . . . . . . . " 
+        ". . . . . . . . . . . . . . . . . . . . . . . . . " 
+        ". . . . . . . . . . . . . . . . . . . . . . . . . " 
+        ". . . . . . . . . . . . . . . . . . . . . . . . . " 
+        ". . . . . . . . . . . . . . . . . . . . . . . . . " 
+        ". . . . . . . . . . . . . . . . . . . . . . . . . ";
+}
+.dotleader li li:before {
+    display: none;
+}
+.dotleader li {
+    margin-bottom: 5px;
+}
+.dotleader span {
+    background: #fff;
+}
+.dotleader span + span {
+    float: right;
+}
+
+main h1 {
+    line-height: 1.1em;
+}
+main h2 {
+    font-size: smaller;
+}
+.menu-section {
+    column-count: 2;
+}
+#menu h1 {
+    border-bottom: 1px solid var(--accent-color);
+}
+#menu h2 {
+    margin-top: 0;
+}
+main footer {
+    font-size: smaller;
+    text-align: center;
+}
+
+#MainContent ul {
+    margin: 1em 0;
+    list-style-position: inside;
+}
+#MainContent ul ul {
+    margin: 0 0 1em 2em;
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2px;
+    line-height: 0;
+}
+#gallery img {
+    width: 322px;
+    height: 215px;
+    object-fit: cover;
+}
+#gallery figcaption {
+    display: none;
+}
+
+#OpeningHours,
+#Map {
+    margin-bottom: 2em;
+    width: calc(50% - 2em);
+}
+#OpeningHours {
+    border: 2px solid #4285f4;
+    float: left;
+}
+
+#OpeningHours ol {
+    margin: 2em;
+}
+
+#OpeningHours h1 {
+    text-align: center;
+    font: 300 2em/1.1em proxima-nova;
+    text-transform: uppercase;
+}
+
+#Map {
+    float: right;
+}
+
+.menu-item-photo {
+    float: right;
+    margin: 0 0 1em 1em;
+    max-width: 50%;
+    border-radius: 1em;
+}
+
+h1#featured-in + ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2px;
+}
+h1#featured-in + ul img {
+    max-width: 100%;
+}
+
+#MainFooter {
+    clear: both;
+    border-top: 1px solid var(--main-color);
+    padding: 2em;
+    font-size: 14px;
+    text-align: center;
+}
+#MainFooter .u-photo,
+#MainFooter .u-email {
+    display: none;
+}

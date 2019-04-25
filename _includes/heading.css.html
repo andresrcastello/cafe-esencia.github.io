@@ -1,0 +1,15 @@
+<style>
+{% for image in page.header_images %}
+#MainContent h1:nth-of-type({{ forloop.index }}) {
+    margin: 0;
+    height: 650px;
+    background: no-repeat center url("{{ image | prepend: "/static/images/" | relative_url }}");
+    background-size: contain;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font: 300 90px/630px proxima-nova;
+    letter-spacing: .03em;
+}
+{% endfor %}
+</style>
