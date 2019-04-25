@@ -2,25 +2,29 @@
 layout: none
 ---
 
+/**
+ * @group Variables.
+ */
 :root {
     --main-color: #4e76c3;   /* Café Esencia Blue*/
     --accent-color: #eddca8; /* Café Esencia Yellow */
 }
 
+/**
+ * @group Typography.
+ */
 @font-face {
     font-family: proxima-nova;
     src: url("../fonts/proxima-nova/proxima-nova.woff") format("woff2"), url("../fonts/proxima-nova/proxima-nova.otf") format("opentype");
     font-style: normal;
     font-weight: 700;
 }
-
 @font-face {
     font-family: proxima-nova;
     src: url("../fonts/proxima-nova/proxima-nova-semibold.woff") format("woff2"), url("../fonts/proxima-nova/proxima-nova-semibold.otf") format("opentype");
     font-style: normal;
     font-weight: 600;
 }
-
 @font-face {
     font-family: proxima-nova;
     src: url("../fonts/proxima-nova/proxima-nova-light.woff") format("woff2"), url("../fonts/proxima-nova/proxima-nova-light.otf") format("opentype");
@@ -28,6 +32,9 @@ layout: none
     font-weight: 300;
 }
 
+/**
+ * @group Reset.
+ */
 html,
 body,
 ul,
@@ -38,6 +45,7 @@ figure {
     padding: 0;
     list-style-type: none;
 }
+
 body {
     background: #fff;
     color: var(--main-color);
@@ -203,4 +211,41 @@ h1#featured-in + ul img {
 #MainFooter .u-photo,
 #MainFooter .u-email {
     display: none;
+}
+
+/**
+ * @group Mobile "tablet" styles. Medium-size width.
+ */
+@media screen and (max-width: 999px) {
+    #Masthead,
+    #MainContent {
+        max-width: 90%;
+    }
+    #Masthead h1 {
+        float: none;
+    }
+    #gallery {
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+}
+
+@media screen and (max-width: 499px) {
+    #MainNavigation li {
+        display: list-item;
+        line-height: 1.5em;
+        text-align: center;
+    }
+    #OpeningHours,
+    #Map {
+        width: auto;
+        float: none;
+    }
+    #gallery {
+        grid-template-columns: 1fr;
+    }
+    .menu-section {
+        font-size: 14px;
+        column-count: 1;
+    }
 }

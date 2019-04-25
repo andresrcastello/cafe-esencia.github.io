@@ -3,8 +3,7 @@
 #MainContent h1:nth-of-type({{ forloop.index }}) {
     margin: 0;
     height: 650px;
-    background: no-repeat center url("{{ image | prepend: "/static/images/" | relative_url }}");
-    background-size: contain;
+    background: no-repeat center/contain url("{{ image | prepend: "/static/images/" | relative_url }}");
     text-align: center;
     color: #fff;
     text-transform: uppercase;

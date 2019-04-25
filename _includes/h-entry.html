@@ -5,7 +5,7 @@
 {% endif %}
 <article id="post-{{ entry.id | slugify }}" class="h-entry hentry">
     <header>
-        <time class="dt-published published" datetime="{{ entry.date | date_to_xmlschema }}">{{ entry.date | date: site.iCalendar.date_format }}</time>
+        <time class="dt-published published" datetime="{{ entry.date | date_to_xmlschema }}">{{ entry.date | date: site.date_format }}</time>
         <h1 class="p-name entry-title">
             <a href="{{ entry.url }}" class="u-url">{{ entry.title }}</a>
         </h1>

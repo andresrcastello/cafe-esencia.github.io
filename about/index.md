@@ -22,16 +22,16 @@ The saying goes “you shouldn’t remember a good churro-maker,” referring to
 # Sourcing
 
 * Dairy:
-    * [Battenkill Valley Creamery](http://www.battenkillcreamery.com/)
+    * [Battenkill Valley Creamery](https://battenkillcreamery.com/)
 * Eggs:
-    * [Saunder Farms](https://www.saudereggs.com/)
+    * [Sauder Farms](https://saudereggs.com/)
     * [Nellie's Certified Humane](https://nelliesfreerange.com/)
 * Coffee:
-    * [Brooklyn Roasting Company (fairtrade and organic beans)](https://www.brooklynroasting.com/)
+    * [Brooklyn Roasting Company (fairtrade and organic beans)](https://brooklynroasting.com/)
 * Chocolate:
-    * [Agostoni Chocolate (fairtrade and organic)](http://www.agostonichocolate.com/us/)
+    * [Agostoni Chocolate (fairtrade and organic)](http://agostonichocolate.com/us/)
 * Bread and pastries:
-    * [Bread Alone (Catskills, New York)](https://www.breadalone.com/)
+    * [Bread Alone (Catskills, New York)](https://breadalone.com/)
 * Matcha:
     * [Chalait (Uji, Kyoto, Japan)](https://www.chalait.com/pages/our-matcha)
 

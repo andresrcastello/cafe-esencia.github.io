@@ -10,8 +10,11 @@ main:
     url: /menu/
     text: Menu
   -
-    url: /join-the-team
+    url: /join-the-team/
     text: Join the Team
+  -
+    url: /blog/
+    text: Blog
   -
     url: /press/
     text: Press
