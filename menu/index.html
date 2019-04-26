@@ -2,36 +2,42 @@
 title: Menu
 ---
 
-<div id="menu">
+<div id="menu" itemscope="itemscope" itemtype="https://schema.org/Menu">
 
 {% assign menus = site.menu | group_by: "menu" %}
 {% for menu in menus %}
-<h1 id="{{ menu.name | slugify }}">{{ menu.name | capitalize }}</h1>
-<section id="menu-{{ menu.name | slugify }}" class="menu-section">
-
-{% assign categories = menu.items | group_by: "category" %}
-{% for category in categories %}
-<h2 id="{{ category.name | slugify }}">{{ category.name }}</h2>
-{% if site.data.menu_categories contains category.name %}
-<p>{{ site.data.menu_categories[category.name] }}</p>
-{% endif %}
-<ul class="dotleader">
-    {% for item in category.items %}
-    <li>
-        <span>{{ item.title }}</span>
-        <span>${{ item.price }}</span>
-        {% if item.content %}<ul>
-            <li><p>{{ item.content }}</p></li>
-        </ul>{% endif %}
-        {% if item.diets %}<ul class="diets">{% for diet in item.diets %}
-        <li>({{ diet }})</li>
-        {% endfor %}</ul>{% endif %}
-    </li>
-    {% endfor %}
-</ul>
-{% endfor %}
-
-</section><!-- .menu-section -->
+<div itemscope="itemscope" itemtype="https://schema.org/MenuSection">
+    <h1 id="{{ menu.name | slugify }}" itemprop="name">{{ menu.name | capitalize }}</h1>
+    <section id="menu-{{ menu.name | slugify }}" class="menu-section">
+        {% assign categories = menu.items | group_by: "category" %}
+        {% for category in categories %}
+        <div itemscope="itemscope" itemtype="https://schema.org/MenuSection">
+            <h2 id="{{ category.name | slugify }}" itemprop="name">{{ category.name }}</h2>
+            {% if site.data.menu_categories contains category.name %}
+            <p>{{ site.data.menu_categories[category.name] }}</p>
+            {% endif %}
+            <ul class="dotleader">
+                {% for item in category.items %}
+                <li itemscope="itemscope" itemtype="https://schema.org/MenuItem">
+                    <span itemprop="name">{{ item.title }}</span>
+                    <span itemscope="itemscope" itemtype="https://schema.org/Offer">
+                        $<span itemprop="price">{{ item.price }}</span>
+                        <meta itemprop="priceCurrency" content="USD" />
+                    </span><!-- [itemtype="https://schema.org/Offer"] -->
+                    {% assign the_content = item.content | strip %}
+                    {% if "" != the_content %}<ul>
+                        <li itemprop="description">{{ the_content }}</li>
+                    </ul>{% endif %}
+                    {% if item.diets %}<ul class="diets">{% for diet in item.diets %}
+                    <li>({{ diet }})<link itemprop="suitableForDiet" href="https://schema.org/{{ diet | capitalize | replace: " ", "" }}Diet" /></li>
+                    {% endfor %}</ul>{% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div><!-- [itemtype="https://schema.org/MenuSection"] -->
+        {% endfor %}
+    </section><!-- .menu-section -->
+</div><!-- [itemtype="https://schema.org/MenuSection"] -->
 {% endfor %}
 
 </div><!-- #menu -->

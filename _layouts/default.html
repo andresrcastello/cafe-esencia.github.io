@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="{{ site.human_language | default: "en" }}">
+<html lang="{{ site.human_language | default: "en" }}"
+      itemscope="itemscope"
+      itemtype="https://schema.org/Restaurant"
+>
 {% include head.html %}
 <body>
     {% include masthead.html %}
@@ -8,5 +11,8 @@
     </main>
     {% include foot.html %}
 <script src="{{ "/static/js/main.js" | relative_url }}"></script>
+{% for cuisine in site.cuisines %}
+<meta itemprop="servesCuisine" content="{{ cuisine }}" />
+{% endfor %}
 </body>
 </html>

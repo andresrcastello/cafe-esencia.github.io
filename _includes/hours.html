@@ -2,9 +2,9 @@
     <h1>Hours</h1>
     <ol class="dotleader">
         {% for day in site.data.hours %}
-        <li>
+        <li><meta itemprop="openingHours" content="{{ day[0] | capitalize | truncate: 2, "" }} {{ day[1].open }}-{{ day[1].close }}" />
             <span>{{ day[0] | capitalize }}</span>
-            <span>{{ day[1] | downcase }}</span>
+            <span>{{ day[1].open | date: site.time_format | strip }}&ndash;{{ day[1].close | date: site.time_format | strip }}</span>
         </li>
         {% endfor %}
     </ol>

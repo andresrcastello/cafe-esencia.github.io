@@ -1,7 +1,7 @@
 <header id="Masthead">
-    <h1>
+    <h1 itemprop="name" content="{{ site.title }}">
         <a href="{{ "/" | relative_url }}">
-            <img src="{{ site.main_logo | prepend: "/static/images/" | relative_url }}" alt="{{ site.title }}" />
+            <img src="{{ site.main_logo | prepend: "/static/images/" | relative_url }}" alt="{{ site.title }}" itemprop="image" />
         </a>
     </h1>
     <nav id="MainNavigation" onclick="void(0);">

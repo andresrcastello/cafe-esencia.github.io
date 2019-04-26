@@ -9,6 +9,7 @@ main:
   -
     url: /menu/
     text: Menu
+    a_extra: itemprop="hasMenu" property="hasMenu"
   -
     url: /join-the-team/
     text: Join the Team
